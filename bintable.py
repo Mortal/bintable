@@ -25,7 +25,7 @@ def write(table: astropy.table.Table, path: str) -> None:
     masklength = 0
     for k in table.colnames:
         col = table.columns[k]
-        if col.dtype.char == "U":
+        if col.dtype.char in ("S", "U"):
             datafile = datafiles.setdefault(
                 "text", {"name": "data.text.json", "datas": [], "length": 0}
             )
