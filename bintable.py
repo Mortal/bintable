@@ -54,7 +54,7 @@ def write(table: astropy.table.Table, path: str) -> None:
 
     if os.path.exists(path):
         if not os.path.exists(
-            os.path.join(path, "bintable.json_")
+            os.path.join(path, "bintable.json")
         ) and not os.path.exists(os.path.join(path, "bintable.json_")):
             raise FileExistsError(path)
     else:
